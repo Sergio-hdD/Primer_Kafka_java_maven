@@ -68,3 +68,23 @@ Key: key_4, Value: Value_texto-mensaje_4, Topic: sample-topic, Partition: 0, Off
 - El Consumer no termina (por el while true): Hay dos opciones
   - Pararlo manualmente; en este caso si se lo vuelve ajecutar, no encuentra mensjes a menos que se haga el punto A
   - Dejarlo seguir, ejecucutar de nuevo lo del punto A y ver los resultados como se indica en el punto B.1 
+
+###
+***
+***
+### Comfigurar el Consumer para que se pueda instanciar (correr) más de uno a la vez 
+```bash
+Una vez que el Consumer está corriendo (paso B) no se podía levantar otro a la par. 
+Para que si se pueda correr mas de uno a la vez, hay que Equilibrar los Consumers (esto reparte las particiones)
+ Se configura como explico seguidamente...
+ [Las imagenes a las que me voy a referir están en la carpeta photos (src/photos)]
+1- Elegimos "Edit Configurations", como lo muestro en la imagen "paso_1".
+2- En la ventana que se abre clic en "Modify options" y se va a ver como lo muestro en la imagen 
+   "pre_paso_2", luego dar clic sobre "Allow multiple instances" como lo muestro en la imagen "paso_2".
+3- Por último dar clic en "OK" como muestro en la imagen "paso_3".
+
+Luego de estos tres pasos ya puedo levantar mas de un Consumer a la vez y se puede ver [como se equilibró] mirando 
+los detalles en cada consola Run del IDE de cada Consumer [como lo del punto B.1].
+```
+***
+***
